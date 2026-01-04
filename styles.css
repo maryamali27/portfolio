@@ -44,6 +44,7 @@ body{background:
 .avatar{width:84px;height:84px;border-radius:14px;object-fit:cover;border:2px solid rgba(255,255,255,0.06);box-shadow:0 12px 36px rgba(2,6,23,0.6); transition: transform 350ms;}
 .avatar:hover { transform: translateY(-4px) rotate(-1deg); }
 h1{margin:0;font-size:1.2rem}
+h2{font-size:1.8rem;margin:0}
 .muted{color:var(--muted);margin-top:6px}
 .socials{margin-top:8px;display:flex;gap:8px}
 .socials a{color:var(--muted);text-decoration:none}
@@ -58,6 +59,11 @@ h1{margin:0;font-size:1.2rem}
 .btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer;transition:transform 200ms, box-shadow 200ms}
 .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));border:none;color:white;box-shadow:0 12px 30px rgba(12,10,55,0.45)}
 .btn.primary:hover { animation: pulseBtn 1500ms infinite; }
+
+/* about */
+.about{text-align:center;padding:32px}
+.about h3{margin-top:0;font-size:1.5rem}
+.about p{max-width:700px;margin:0 auto;color:var(--muted);line-height:1.7;font-size:1.1rem}
 
 /* anim showcase */
 .anim-showcase lottie-player{border-radius:10px;overflow:hidden;display:block}
