@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-01-04T00:00:00Z",
+  "projects": [
+    {
+      "name": "example-project-a",
+      "repo": "https://github.com/maryamali27/example-project-a",
+      "desc": "Example project A — replace with real data or run the generator script.",
+      "tags": ["React", "Example"],
+      "stars": 42,
+      "forks": 3,
+      "featured": true,
+      "updated_at": "2025-11-02T10:30:00Z",
+      "created_at": "2025-01-02T09:00:00Z",
+      "language": "JavaScript",
+      "license": "MIT",
+      "thumbnail": "https://via.placeholder.com/1200x700.png?text=Project+A+Screenshot",
+      "screenshots": [
+        { "src": "https://via.placeholder.com/1200x700.png?text=Project+A+1", "alt": "Project A screenshot 1" }
+      ],
+      "size": 123,
+      "open_issues_count": 1,
+      "default_branch": "main",
+      "readme_excerpt": "This is a README excerpt for example-project-a. Run the generator to fetch actual README excerpts.",
+      "contributors": [
+        { "login": "maryamali27", "avatar": "https://avatars.githubusercontent.com/u/000000?v=4", "url": "https://github.com/maryamali27", "contributions": 100 }
+      ]
+    }
+  ]
+}

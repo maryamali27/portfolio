@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maryam Ali — Portfolio</title>
+  <meta name="description" content="Maryam Ali — Software developer. Portfolio of projects, skills, and experience." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="top card reveal" data-reveal-delay="0">
+      <div class="brand">
+        <img id="avatar" class="avatar" src="https://avatars.githubusercontent.com/maryamali27" alt="Maryam Ali">
+        <div>
+          <h1 id="name">Maryam Ali</h1>
+          <p id="tagline" class="muted">Software developer • Web & Data • Clean UI/UX</p>
+          <div class="socials">
+            <a id="githubLink" href="https://github.com/maryamali27" target="_blank" rel="noopener">GitHub</a>
+            <a id="linkedinLink" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="resumeLink" href="resume.pdf" download="Maryam-Ali-Resume.pdf">Resume</a>
+            <a id="emailLink" href="mailto:m3ryamali27@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle" class="btn" aria-label="Toggle theme">🌙</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero card reveal" data-reveal-delay="80" id="hero">
+        <div class="hero-left">
+          <h2 class="reveal" data-reveal-delay="160">Professional Projects & Portfolio</h2>
+          <p class="lead reveal" data-reveal-delay="240">Curated portfolio with complete project details — code, demo, contributors, README excerpt and metrics.</p>
+
+          <div class="actions reveal" data-reveal-delay="320">
+            <button id="importBtn" class="btn primary">Import from GitHub</button>
+            <button id="downloadPDF" class="btn">Download Portfolio (PDF)</button>
+            <button id="exportJSON" class="btn">Export projects.json</button>
+          </div>
+
+          <div class="stats" id="stats" aria-hidden="false">
+            <div class="stat reveal" data-reveal-delay="380">
+              <div class="num stat-num" data-target="—" id="statRepos">—</div>
+              <div class="label">Repos</div>
+            </div>
+            <div class="stat reveal" data-reveal-delay="420">
+              <div class="num stat-num" data-target="—" id="statStars">—</div>
+              <div class="label">Stars</div>
+            </div>
+            <div class="stat reveal" data-reveal-delay="460">
+              <div class="num stat-num" data-target="—" id="statForks">—</div>
+              <div class="label">Forks</div>
+            </div>
+            <div class="stat reveal" data-reveal-delay="500">
+              <div class="num stat-num" data-target="—" id="statLangs">—</div>
+              <div class="label">Languages</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- Live animation removed as requested.
+               Replaced with a compact Highlights card to keep layout balanced. -->
+          <div class="highlights card small reveal" data-reveal-delay="560" aria-hidden="false">
+            <h4>Highlights</h4>
+            <ul style="margin:8px 0 0 0; padding-left:18px; color:var(--muted);">
+              <li>Interactive project cards with README & contributors</li>
+              <li>Search, filters and sorting (featured / recent / stars)</li>
+              <li>Screenshot lightbox and project detail modal</li>
+              <li>Exportable projects.json and print-to-PDF resume</li>
+            </ul>
+          </div>
+
+          <div class="skills card small reveal" data-reveal-delay="620" aria-hidden="false">
+            <h4>Top Skills</h4>
+            <div class="skill"><span>JavaScript</span><progress value="85" max="100"></progress></div>
+            <div class="skill"><span>Python</span><progress value="78" max="100"></progress></div>
+            <div class="skill"><span>React</span><progress value="80" max="100"></progress></div>
+            <div class="skill"><span>Data & ML</span><progress value="68" max="100"></progress></div>
+          </div>
+
+          <div class="card small reveal" data-reveal-delay="680">
+            <h4>Languages</h4>
+            <canvas id="langChart" aria-label="Languages chart" height="160"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls-bar reveal" data-reveal-delay="760">
+        <input id="search" class="input" placeholder="Search projects or tags…" aria-label="Search projects" />
+        <select id="sort" class="input" aria-label="Sort projects">
+          <option value="featured">Featured</option>
+          <option value="recent">Most recent</option>
+          <option value="stars">Most stars</option>
+        </select>
+        <div id="filters" class="filters" role="list" aria-label="Filter by tags"></div>
+      </section>
+
+      <section id="projects" class="grid" aria-live="polite"></section>
+
+      <section class="section card reveal" id="timelineSection" data-reveal-delay="840">
+        <h3>Project Timeline</h3>
+        <div id="timeline" class="timeline-list" aria-hidden="false"></div>
+      </section>
+
+      <section class="section card reveal" id="contact" data-reveal-delay="920">
+        <h3>Contact</h3>
+        <p>If you'd like to get in touch, email <a id="contactEmail" href="mailto:m3ryamali27@gmail.com">m3ryamali27@gmail.com</a> or use the contact form below.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" data-netlify="false">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Send Message</button>
+          <p class="muted" style="margin-top:8px">Prefer email? <a href="mailto:m3ryamali27@gmail.com">m3ryamali27@gmail.com</a></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="foot card reveal" data-reveal-delay="980">
+      Built with ❤️ — <a href="https://github.com/maryamali27" target="_blank">github.com/maryamali27</a>
+    </footer>
+  </div>
+
+  <!-- Project modal / lightbox -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content card" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox for screenshots -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lbClose" aria-label="Close" class="lightbox-close">✕</button>
+    <img id="lbImage" alt="screenshot" />
+    <div id="lbCaption" class="muted"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
